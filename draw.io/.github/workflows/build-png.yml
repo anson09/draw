@@ -1,0 +1,36 @@
+name: build draw.io to png
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SPA NDOE
+        uses: Burnett01/actions-drawio@1.0
+        with:
+          src: SPA-NODE.drawio
+          dest: SPA-NODE.png
+      - name: ricequant fe arch 2019 
+        uses: Burnett01/actions-drawio@1.0
+        with:
+          src: ricequant-fe-arch-2019.drawio
+          dest: ricequant-fe-arch-2019.png
+      - name: ricequant fe arch 2021 
+        uses: Burnett01/actions-drawio@1.0
+        with:
+          src: ricequant-fe-arch-2021.drawio
+          dest: ricequant-fe-arch-2021.png
+      - name: rqthemes
+        uses: Burnett01/actions-drawio@1.0
+        with:
+          src: rqthemes.drawio
+          dest: rqthemes.png
+      - name: Commit png
+        run: |
+          git config --global user.name 'anson09'
+          git config --global user.email 'finalsong6@gmail.com'
+          git add --all
+          git commit -m "png auto generated"
+          git push
