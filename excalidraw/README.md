@@ -1,3 +1,3 @@
-# vue compare with react in reactive
+# vue vs react in reactive
 
-![vue compare with react in reactive](./vue-compare-with-react-in-reactive.png)
+![vue vs react in reactive](./vue-vs-react-in-reactive.svg)
